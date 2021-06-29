@@ -1,0 +1,9 @@
+%{
+  "delta_crdt": {:hex, :delta_crdt, "0.6.2", "7303a4f7ca303e8dc6c4ba7c996804a4acd3bd0dbef02b1c3089503b45799e95", [:mix], [{:merkle_map, "~> 0.2.0", [hex: :merkle_map, repo: "hexpm", optional: false]}, {:telemetry, "~> 0.4.0", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm", "816de91652a63d5ff5834ac48ba69615d083bb191260e53f1c361be26d413816"},
+  "ex2ms": {:hex, :ex2ms, "1.6.0", "f39bbd9ff1b0f27b3f707bab2d167066dd8965e7df1149b962d94c74615d0e09", [:mix], [], "hexpm", "0d1ab5e08421af5cd69146efb408dbb1ff77f38a2f4df5f086f2512dc8cf65bf"},
+  "horde": {:hex, :horde, "0.8.4", "7c428543656cd838771fe5903fbefbe2f6a30f6befae657ed1998e44662d2fc5", [:mix], [{:delta_crdt, "~> 0.6.2", [hex: :delta_crdt, repo: "hexpm", optional: false]}, {:libring, "~> 1.4", [hex: :libring, repo: "hexpm", optional: false]}, {:telemetry, "~> 0.4.0", [hex: :telemetry, repo: "hexpm", optional: false]}, {:telemetry_poller, "~> 0.5.0", [hex: :telemetry_poller, repo: "hexpm", optional: false]}], "hexpm", "0433f2e37a83a68b582290cc787f35b7fc891d8221fb9cc295429a199f92678f"},
+  "libring": {:hex, :libring, "1.5.0", "44313eb6862f5c9168594a061e9d5f556a9819da7c6444706a9e2da533396d70", [:mix], [], "hexpm", "04e843d4fdcff49a62d8e03778d17c6cb2a03fe2d14020d3825a1761b55bd6cc"},
+  "merkle_map": {:hex, :merkle_map, "0.2.1", "01a88c87a6b9fb594c67c17ebaf047ee55ffa34e74297aa583ed87148006c4c8", [:mix], [], "hexpm", "fed4d143a5c8166eee4fa2b49564f3c4eace9cb252f0a82c1613bba905b2d04d"},
+  "telemetry": {:hex, :telemetry, "0.4.3", "a06428a514bdbc63293cd9a6263aad00ddeb66f608163bdec7c8995784080818", [:rebar3], [], "hexpm", "eb72b8365ffda5bed68a620d1da88525e326cb82a75ee61354fc24b844768041"},
+  "telemetry_poller": {:hex, :telemetry_poller, "0.5.1", "21071cc2e536810bac5628b935521ff3e28f0303e770951158c73eaaa01e962a", [:rebar3], [{:telemetry, "~> 0.4", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm", "4cab72069210bc6e7a080cec9afffad1b33370149ed5d379b81c7c5f0c663fd4"},
+}
