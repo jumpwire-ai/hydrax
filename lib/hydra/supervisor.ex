@@ -15,7 +15,7 @@ defmodule Hydra.Supervisor do
 
   @impl true
   def init(init_arg) do
-    [strategy: :one_for_one, members: :auto]
+    [strategy: :one_for_one, members: :auto, process_redistribution: :active]
     |> Keyword.merge(init_arg)
     |> Horde.DynamicSupervisor.init()
   end
