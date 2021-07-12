@@ -22,10 +22,22 @@ defmodule Hydra.Registry do
     {:via, Horde.Registry, {__MODULE__, {flow, stage}}}
   end
 
+  @doc """
+  Takes a registered name in the form of a :via tuple and unwraps it to return the key.
+  """
+  def unwrap_pid_name({:via, Horde.Registry, {__MODULE__, name}}), do: name
+  def unwrap_pid_name(_), do: nil
+
   def get_all() do
     selector = fun do {key, pid, _} -> {key, pid} end
     Horde.Registry.select(__MODULE__, selector)
   end
+
+  @doc """
+  Remove the given key from the registry.
+  """
+  def unregister(name = {:via, _, _}), do: name |> unwrap_pid_name() |> unregister()
+  def unregister(name), do: Horde.Registry.unregister(__MODULE__, name)
 
   @doc """
   Lookup all PIDs associated with the given flow id.

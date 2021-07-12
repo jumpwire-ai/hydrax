@@ -19,4 +19,7 @@ defmodule Hydra.Supervisor do
     |> Keyword.merge(init_arg)
     |> Horde.DynamicSupervisor.init()
   end
+
+  def which_children(), do: Horde.DynamicSupervisor.which_children(__MODULE__)
+  def terminate_child(child_pid), do: Horde.DynamicSupervisor.terminate_child(__MODULE__, child_pid)
 end
