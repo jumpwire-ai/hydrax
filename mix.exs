@@ -2,14 +2,19 @@ defmodule Hydrax.MixProject do
   use Mix.Project
 
   @version "0.3.0"
+  @github_url "https://github.com/extragood-io/hydrax"
 
   def project do
     [
       app: :hydrax,
+      name: "Hydrax",
       version: @version,
+      package: package(),
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      description: description(),
+      source_url: @github_url
     ]
   end
 
@@ -23,6 +28,19 @@ defmodule Hydrax.MixProject do
     [
       {:horde, "~> 0.8.4"},
       {:ex2ms, "~> 1.0"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+    ]
+  end
+
+  defp description do
+    "Shared functionality for working with PIDs across a distributed cluster. Acts as a wrapper
+around [Horde](https://hex.pm/packages/horde), providing a few convenience functions such as helpers for working with two-element registry keys."
+  end
+
+  defp package do
+    [
+      licenses: ["Apache-2.0"],
+      links: %{"GitHub" => @github_url},
     ]
   end
 end
