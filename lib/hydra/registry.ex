@@ -18,8 +18,16 @@ defmodule Hydra.Registry do
     |> Horde.Registry.init()
   end
 
-  def pid_name(flow, stage) do
-    {:via, Horde.Registry, {__MODULE__, {flow, stage}}}
+  @doc """
+  Return the PID via-tuple for an id and name pair.
+
+  ## Examples
+
+  iex> Hydra.Registry.pid_name("foo", "bar")
+  {:via, Horde.Registry, {Hydra.Registry, {"foo", "bar"}}}
+  """
+  def pid_name(id, name) do
+    {:via, Horde.Registry, {__MODULE__, {id, name}}}
   end
 
   @doc """
@@ -40,19 +48,19 @@ defmodule Hydra.Registry do
   def unregister(name), do: Horde.Registry.unregister(__MODULE__, name)
 
   @doc """
-  Lookup all PIDs associated with the given flow id.
+  Lookup all PIDs associated with the given id.
   """
-  def lookup_flow(id) do
-    selector = fun do {{flow_id, stage}, pid, _} when flow_id == ^id -> {{flow_id, stage}, pid} end
+  def select(id) do
+    selector = fun do {{pid_id, pid_name}, pid, _} when pid_id == ^id -> {{pid_id, pid_name}, pid} end
     Horde.Registry.select(__MODULE__, selector)
   end
 
   @doc """
-  Lookup the PIDs associated with the given flow id and stage name.
+  Lookup the PIDs associated with the given id and name.
   """
-  def lookup_flow(id, stage) do
+  def select(id, name) do
     selector = fun do
-      {{flow_id, stage_id}, pid, _} when flow_id == ^id and stage_id == ^stage ->
+      {{pid_id, pid_name}, pid, _} when pid_id == ^id and pid_name == ^name ->
         pid
     end
     Horde.Registry.select(__MODULE__, selector)
