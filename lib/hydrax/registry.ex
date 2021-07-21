@@ -1,4 +1,4 @@
-defmodule Hydra.Registry do
+defmodule Hydrax.Registry do
   @moduledoc """
   A PID registry for use across nodes in a cluster.
   """
@@ -23,8 +23,8 @@ defmodule Hydra.Registry do
 
   ## Examples
 
-  iex> Hydra.Registry.pid_name("foo", "bar")
-  {:via, Horde.Registry, {Hydra.Registry, {"foo", "bar"}}}
+  iex> Hydrax.Registry.pid_name("foo", "bar")
+  {:via, Horde.Registry, {Hydrax.Registry, {"foo", "bar"}}}
   """
   def pid_name(id, name) do
     {:via, Horde.Registry, {__MODULE__, {id, name}}}

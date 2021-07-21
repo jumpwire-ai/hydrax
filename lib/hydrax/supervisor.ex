@@ -1,4 +1,4 @@
-defmodule Hydra.Supervisor do
+defmodule Hydrax.Supervisor do
   @moduledoc """
   A distributed supervisor that dynamically adds and monitors PIDs across the cluster.
   """

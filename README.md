@@ -28,8 +28,8 @@ defmodule Application do
   @impl true
   def start(_type, _args) do
     children = [
-      Hydra.Registry,
-      Hydra.Supervisor,
+      Hydrax.Registry,
+      Hydrax.Supervisor,
       # other children
     ]
 

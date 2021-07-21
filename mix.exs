@@ -1,10 +1,12 @@
-defmodule Hydra.MixProject do
+defmodule Hydrax.MixProject do
   use Mix.Project
+
+  @version "0.3.0"
 
   def project do
     [
-      app: :hydra,
-      version: "0.3.0",
+      app: :hydrax,
+      version: @version,
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       deps: deps()
