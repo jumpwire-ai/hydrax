@@ -7,14 +7,17 @@ defmodule Hydrax.MixProject do
   def project do
     [
       app: :hydrax,
-      name: "Hydrax",
       version: @version,
       package: package(),
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+
+      # Docs
+      name: "Hydrax",
       description: description(),
-      source_url: @github_url
+      source_url: @github_url,
+      docs: [extras: ["README.md", "LICENSE"], source_ref: @version]
     ]
   end
 
