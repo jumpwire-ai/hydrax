@@ -1,5 +1,7 @@
 # Hydrax
 
+![Hex.pm](https://img.shields.io/hexpm/v/hydrax)
+
 Shared functionality for working with PIDs across a distributed cluster. Acts as a wrapper
 around [Horde](https://hex.pm/packages/horde), providing a few convenience functions such as helpers for working with two-element registry keys.
 
