@@ -34,7 +34,7 @@ defmodule Hydrax.Supervisor do
     {children, init_arg} = Keyword.pop(init_arg, :children, [])
     {delay, init_arg} = Keyword.pop(init_arg, :child_init_delay, 500)
 
-    init_arg = [strategy: :one_for_one, members: :auto, process_redistribution: :active]
+    init_arg = [strategy: :one_for_one, members: :auto]
     |> Keyword.merge(init_arg)
 
     case Horde.DynamicSupervisor.init(init_arg) do
