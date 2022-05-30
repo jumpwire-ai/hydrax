@@ -30,7 +30,7 @@ defmodule Hydrax.MixProject do
 
   defp deps do
     [
-      {:horde, "~> 0.8.4"},
+      {:horde, "~> 0.8.7"},
       {:ex2ms, "~> 1.0"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
     ]
