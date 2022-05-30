@@ -1,8 +1,8 @@
 defmodule Hydrax.MixProject do
   use Mix.Project
 
-  @version "0.6.0"
-  @github_url "https://github.com/extragood-io/hydrax"
+  @version "0.6.1"
+  @github_url "https://github.com/jumpwire-ai/hydrax"
 
   def project do
     [
